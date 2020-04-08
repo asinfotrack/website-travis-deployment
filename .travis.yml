@@ -1,4 +1,5 @@
 dist: bionic
+language: php
 
 deploy:
   - provider: script
