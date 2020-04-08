@@ -12,11 +12,9 @@ addons:
 script:
   - echo "Building"
   - composer install --no-dev --ignore-platform-reqs -o -q
-  - mv dev_node_modules node_modules || true
   - npm i
   - npm run build
-  - mv node_modules dev_node_modules
-  - mv prod_node_modules node_modules || true
+  - rm -rf node_modules
   - npm i --production
 
 deploy:
