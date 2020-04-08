@@ -3,30 +3,6 @@ dist: bionic
 language: php
 
 before_install:
-  - sudo apt update && sudo apt -y install --no-install-recommends --assume-yes --quiet \
-    libzip-dev \
-    ca-certificates \
-    curl \
-    git \
-    zip \
-    unzip \
-    rpm \
-    libaio1 \
-    wget \
-    build-essential \
-    apt-transport-https \
-    libmcrypt-dev \
-    zlib1g-dev \
-    libxslt-dev \
-    libpng-dev \
-    libicu-dev \
-    g++ \
-    npm \
-    ssh \
-    mariadb-client
-  - npm i npm@latest -g
-  - curl -sS https://getcomposer.org/installer --output /tmp/installer.php
-  - php /tmp/installer.php --no-ansi --install-dir=/usr/bin --filename=composer
   - composer global require "fxp/composer-asset-plugin:~1.4.6"
 
 addons:

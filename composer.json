@@ -1,0 +1,12 @@
+{
+    "name": "lpa/website-travis-deployment",
+    "authors": [
+        {
+            "name": "Pascal Lüscher",
+            "email": "pascal.luescher@asinfotrack.ch"
+        }
+    ],
+    "require": {
+        "psr/log": "^1.1"
+    }
+}

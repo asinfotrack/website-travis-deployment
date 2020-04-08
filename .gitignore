@@ -95,3 +95,4 @@ fabric.properties
 
 css/*.css
 node_modules
+/vendor/
