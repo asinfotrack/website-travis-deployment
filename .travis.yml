@@ -3,6 +3,8 @@ language: php
 
 script:
   - echo "hello world"
+  - touch test.txt
+  - echo "Hello world" >> test.txt
 deploy:
   - provider: script
     skip_cleanup: true

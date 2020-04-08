@@ -1,3 +1,7 @@
+cat test.txt
+
+
+
 apt-get update &&\
 apt-get install --no-install-recommends --assume-yes --quiet \
     libzip-dev \
