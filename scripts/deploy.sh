@@ -51,5 +51,5 @@ ssh -p22 $SSH_USER@$SSH_HOST "ls -dt $ROOT_DIR/releases/_*/ | tail -n +10 | xarg
 ssh -p22 $SSH_USER@$SSH_HOST "ls -dt $ROOT_DIR/mysqlbk/* | tail -n +11 | xargs -r rm"
 #migrate
 echo "migrating"
-ssh -p22 $SSH_USER@$SSH_HOST $PHP_PATH $ROOT_DIR/current/yii migrate --interactive=0
-curl -I -k $CACHE_BUST_URL
+# ssh -p22 $SSH_USER@$SSH_HOST $PHP_PATH $ROOT_DIR/current/yii migrate --interactive=0
+# curl -I -k $CACHE_BUST_URL
