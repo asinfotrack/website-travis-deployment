@@ -17,7 +17,7 @@
     "url": "https://github.com/asinfotrack/website-travis-deployment/issues"
   },
   "homepage": "https://github.com/asinfotrack/website-travis-deployment#readme",
-  "dependencies": {
+  "devDependencies": {
     "node-sass": "^4.13.1"
   }
 }
