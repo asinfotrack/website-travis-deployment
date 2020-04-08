@@ -4,6 +4,12 @@ language: php
 
 before_install:
   - composer global require "fxp/composer-asset-plugin:~1.4.6"
+  - which ssh-agent || ( sudo apt update -y && sudo apt install openssh-client -y )
+  - eval $(ssh-agent -s)
+  - echo "$SSH_PRIV_KEY" | tr -d '\r' | ssh-add -
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+  - ssh -o StrictHostKeyChecking=no -l "$SSH_USER" "$SSH_HOST"
 
 addons:
   apt:

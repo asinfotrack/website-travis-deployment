@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="974bbc20-7e6b-4871-b0f2-5a75c622dc5f" name="prod" url="http://github-deployment.asinfotrack.dev">
+        <fileTransfer host="github-deployment.asinfotrack.dev" port="22" rootFolder="/home/asinfotr/public_html/github-deployment.asinfotrack.dev" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
