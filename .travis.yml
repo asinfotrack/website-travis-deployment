@@ -2,6 +2,9 @@ os: linux
 dist: bionic
 language: php
 
+php:
+  - 7.3
+
 before_install:
   - composer global require "fxp/composer-asset-plugin:~1.4.6"
 
