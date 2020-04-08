@@ -1,41 +1,5 @@
 cat test.txt
 
-
-
-apt-get update &&\
-apt-get install --no-install-recommends --assume-yes --quiet \
-    libzip-dev \
-    ca-certificates \
-    curl \
-    git \
-    zip \
-    unzip \
-    rpm \
-    libaio1 \
-    wget \
-    build-essential \
-    apt-transport-https \
-    libmcrypt-dev \
-    zlib1g-dev \
-    libxslt-dev \
-    libpng-dev \
-    libicu-dev \
-    g++ \
-    npm \
-    ssh \
-    mariadb-client \
-&& rm -rf /var/lib/apt/lists/*
-
-npm i npm@latest -g
-
-npm i -g grunt
-npm i -g sass
-
-curl -sS https://getcomposer.org/installer --output /tmp/installer.php
-php /tmp/installer.php --no-ansi --install-dir=/usr/bin --filename=composer
-composer global require "fxp/composer-asset-plugin:~1.4.6"
-
-
 export VERSION_DATE=$(date +"%Y%m%d_%H%M%S")
 export VERSION_UID=${VERSION_DATE}_${CI_COMMIT_SHA:0:8}
 # backup db

@@ -1,10 +1,47 @@
 dist: bionic
 language: php
 
+before_install:
+  - sudo apt-get -y install --no-install-recommends --assume-yes --quiet \
+    libzip-dev \
+    ca-certificates \
+    curl \
+    git \
+    zip \
+    unzip \
+    rpm \
+    libaio1 \
+    wget \
+    build-essential \
+    apt-transport-https \
+    libmcrypt-dev \
+    zlib1g-dev \
+    libxslt-dev \
+    libpng-dev \
+    libicu-dev \
+    g++ \
+    npm \
+    ssh \
+    mariadb-client
+  - npm i npm@latest -g
+  - curl -sS https://getcomposer.org/installer --output /tmp/installer.php
+  - php /tmp/installer.php --no-ansi --install-dir=/usr/bin --filename=composer
+  - composer global require "fxp/composer-asset-plugin:~1.4.6"
+
+addons:
+  apt:
+    update: true
+
 script:
-  - echo "hello world"
-  - touch test.txt
-  - echo "Hello world" >> test.txt
+  - echo "Building"
+  - composer install --no-dev --ignore-platform-reqs -o -q
+  - mv dev_node_modules node_modules || true
+  - npm i
+  - npm run build
+  - mv node_modules dev_node_modules
+  - mv prod_node_modules node_modules || true
+  - npm i --production
+
 deploy:
   - provider: script
     skip_cleanup: true
