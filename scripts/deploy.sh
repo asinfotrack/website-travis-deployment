@@ -1,4 +1,5 @@
-cat test.txt
+ls -alR
+
 
 export VERSION_DATE=$(date +"%Y%m%d_%H%M%S")
 export VERSION_UID=${VERSION_DATE}_${CI_COMMIT_SHA:0:8}
