@@ -4,11 +4,10 @@ language: php
 
 before_install:
   - composer global require "fxp/composer-asset-plugin:~1.4.6"
-  - which ssh-agent || ( sudo apt update -y && sudo apt install openssh-client -y )
-  - eval $(ssh-agent -s)
-  - echo "$SSH_PRIV_KEY" | tr -d '\r' | ssh-add -
-  - mkdir -p ~/.ssh
-  - chmod 700 ~/.ssh
+  - openssl aes-256-cbc -K $encrypted_<...>_key -iv $encrypted_<...>_iv -in travis-openssh-pk.enc -out /tmp/deploy_rsa -d
+  - eval "$(ssh-agent -s)"
+  - chmod 600 /tmp/deploy_rsa
+  - ssh-add /tmp/deploy_rsa
   - ssh -o StrictHostKeyChecking=no -l "$SSH_USER" "$SSH_HOST"
 
 addons:
